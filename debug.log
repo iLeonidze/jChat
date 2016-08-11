@@ -1,0 +1,392 @@
+2016-08-11 09:41:01 INFO  Main:34 - jchat 1.0.8
+2016-08-11 09:41:01 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 09:41:17 INFO  ConsoleAPI:199 - 
+
+jChat Help:
+	help [0] <> - here you are
+	exit [0] <> - stop this application
+	user
+		login [0] <username> <password> - verify credentials and give you new session
+		register [0] <username> <password> <fullname> <email> <gender> - create new user with specified credentials
+		deauth - [0,1,2] <> destroy current session
+		authed - [0] <> true/false if session exists
+		info [0,1,2] <username or nothing> - return some other user info or current user if no username specified
+		edit [0,1,2] <settings name> <settings value> <nothing or userid> - update some current user settings. If moderator or admin - change other user data
+		remove [2] <userid> - remove user from database
+		ban [1] <userid> - suspend user account
+		unban [1] <userid> - unlock user account
+		isbanned [0] <userid> - return user banned state
+
+	Use \s to specify whitespace in your parameter, \n to set new line. Warning: \\s or \\n don't work!
+
+2016-08-11 09:41:22 ERROR ConsoleAPI:32 - Some fields are missing. To get more info use help.
+2016-08-11 09:41:33 ERROR ConsoleAPI:32 - Some fields are missing. To get more info use help.
+2016-08-11 15:15:27 INFO  Main:34 - jchat 1.0.8
+2016-08-11 15:15:27 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 15:16:52 INFO  Main:34 - jchat 1.0.8
+2016-08-11 15:16:52 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 15:16:55 INFO  ConsoleAPI:229 - 
+
+jChat Help:
+	help [0] <> - here you are
+	exit [0] <> - stop this application
+	user
+		login [0] <username> <password> - verify credentials and give you new session
+		register [0] <username> <password> <fullname> <email> <gender> - create new user with specified credentials
+		deauth - [0,1,2] <> destroy current session
+		authed - [0] <> true/false if session exists
+		info [0,1,2] <username or nothing> - return some other user info or current user if no username specified
+		edit [0,1,2] <settings name> <settings value> <nothing or userid> - update some current user settings. If moderator or admin - change other user data
+		remove [2] <userid> - remove user from database
+		ban [1] <userid> - suspend user account
+		unban [1] <userid> - unlock user account
+		op [2] <userid> <level> - grant user permissions: 0 - user, 1 - moderator, 2 - admin
+		isbanned [0] <userid> - return user banned state
+	chat
+		create [0] <userid> <name> - create new chat with specified user and name it. Skip name if you want.
+
+	Use \s to specify whitespace in your parameter, \n to set new line. Warning: \\s or \\n don't work!
+
+2016-08-11 15:17:38 WARN  ConsoleAPI:251 - Unknown method specified. Type help to get more info.
+2016-08-11 15:18:19 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 15:20:06 WARN  ConsoleAPI:70 - An error occurred: Incorrect gender value
+2016-08-11 15:20:18 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 15:21:18 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 15:21:18 WARN  ConsoleAPI:251 - Unknown method specified. Type help to get more info.
+2016-08-11 15:21:35 WARN  ConsoleAPI:251 - Unknown method specified. Type help to get more info.
+2016-08-11 15:22:07 INFO  Main:34 - jchat 1.0.8
+2016-08-11 15:22:07 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 15:22:11 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 15:22:11 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 15:22:11 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 15:22:11 ERROR ConsoleAPI:31 - Some fields are missing. To get more info use help.
+2016-08-11 15:22:11 ERROR ConsoleAPI:215 - Can't create new chat with the user #Pashkinata
+2016-08-11 15:22:50 INFO  Main:34 - jchat 1.0.8
+2016-08-11 15:22:50 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 15:22:51 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 15:22:51 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 15:22:51 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 15:22:51 WARN  ConsoleAPI:197 - Unknown method specified. Type help to get more info.
+2016-08-11 15:23:05 INFO  Main:34 - jchat 1.0.8
+2016-08-11 15:23:05 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 15:23:08 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 15:23:08 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 15:23:08 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 15:23:08 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 67f2efa194389374b6e9e2dae072c16b
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 15:23:08 ERROR ConsoleAPI:31 - Some fields are missing. To get more info use help.
+2016-08-11 15:23:08 ERROR ConsoleAPI:215 - Can't create new chat with the user #Pashkinata
+2016-08-11 15:23:25 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 67f2efa194389374b6e9e2dae072c16b
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 15:23:39 ERROR ConsoleAPI:31 - Some fields are missing. To get more info use help.
+2016-08-11 15:23:39 INFO  ConsoleAPI:213 - Successfully created chat #8987a86b4ff4a2338c69dc9c6cfd0a76 with the user #67f2efa194389374b6e9e2dae072c16b
+2016-08-11 16:06:25 INFO  Main:34 - jchat 1.0.8
+2016-08-11 16:06:25 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 16:06:29 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 16:06:29 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 16:06:29 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 16:06:29 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: e0464f67baf31efbf6393c801aa0e57b
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 16:06:44 INFO  ConsoleAPI:213 - Successfully created chat #7cf66002b8c535c1944ee30e94264ae2 with the user #e0464f67baf31efbf6393c801aa0e57b
+2016-08-11 16:07:02 INFO  ConsoleAPI:224 - 
+ID: 7cf66002b8c535c1944ee30e94264ae2
+Name: null
+Owner ID: 5eeb55cc74681fb2e6b17a415fc5bb90
+Owner Username: Leonid Fedotov
+Created Date: Sun Jan 18 03:35:20 MSK 1970
+Total messages: 0
+Total members: 1
+Chat status: private chat
+2016-08-11 16:19:28 WARN  ConsoleAPI:272 - Unknown method specified. Type help to get more info.
+2016-08-11 16:19:28 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-11 16:19:28 INFO  ConsoleAPI:84 - Welcome, @Pashkinata. You have been logged in!
+2016-08-11 16:20:15 INFO  ConsoleAPI:224 - 
+ID: 7cf66002b8c535c1944ee30e94264ae2
+Name: null
+Owner ID: 5eeb55cc74681fb2e6b17a415fc5bb90
+Owner Username: Leonid Fedotov
+Created Date: Sun Jan 18 03:35:20 MSK 1970
+Total messages: 0
+Total members: 1
+Chat status: private chat
+2016-08-11 16:20:21 WARN  ConsoleAPI:272 - Unknown method specified. Type help to get more info.
+2016-08-11 16:20:29 INFO  ConsoleAPI:224 - 
+ID: null
+Name: null
+Owner ID: null
+Owner Username: ???
+Created Date: Sun Jan 18 03:35:21 MSK 1970
+Total messages: 0
+Total members: 0
+Chat status: private chat
+2016-08-11 16:21:28 INFO  Main:34 - jchat 1.0.8
+2016-08-11 16:21:28 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 16:21:42 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 16:21:42 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 16:21:42 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 16:21:42 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 32e8276f6f390ce2f9ec1a398baa42a9
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 16:21:54 INFO  ConsoleAPI:213 - Successfully created chat #24a8e7d7c75e7ff0b9041ed08f928390 with the user #32e8276f6f390ce2f9ec1a398baa42a9
+2016-08-11 16:22:12 ERROR ConsoleAPI:235 - Can't info about chat #32e8276f6f390ce2f9ec1a398baa42a
+2016-08-11 16:23:52 INFO  Main:34 - jchat 1.0.8
+2016-08-11 16:23:52 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 16:23:57 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 16:23:57 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 16:23:57 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 16:23:57 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 6992d6475fbc311a7f391a16767cea17
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 16:24:06 INFO  ConsoleAPI:213 - Successfully created chat #11e0c9b2b7f4590a52203bd43a7e7200 with the user #6992d6475fbc311a7f391a16767cea17
+2016-08-11 16:24:13 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-11 16:24:13 INFO  ConsoleAPI:84 - Welcome, @Pashkinata. You have been logged in!
+2016-08-11 16:24:28 ERROR ConsoleAPI:235 - Chat #6992d6475fbc311a7f391a16767cea17 not found
+2016-08-11 16:25:10 INFO  Main:34 - jchat 1.0.8
+2016-08-11 16:25:10 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 16:25:15 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 16:25:15 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 16:25:15 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 16:25:15 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: b2b8af7be355a56c6ac68f21f6fb20e4
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 16:25:26 INFO  ConsoleAPI:213 - Successfully created chat #bb2aff35c02e9f266cfda8d406f39ebe with the user #b2b8af7be355a56c6ac68f21f6fb20e4
+2016-08-11 16:25:33 ERROR ConsoleAPI:215 - Can't create new chat with the user #b2b8af7be355a56c6ac68f21f6fb20e
+2016-08-11 16:26:04 INFO  ConsoleAPI:224 - 
+ID: bb2aff35c02e9f266cfda8d406f39ebe
+Name: -
+Owner ID: 0f685c2ea24b9553311e2c504f1dc292
+Owner Username: Leonid Fedotov
+Created Date: Sun Jan 18 03:35:21 MSK 1970
+Total messages: 0
+Total members: 1
+Chat status: private chat
+2016-08-11 16:26:17 INFO  ConsoleAPI:213 - Successfully created chat #5a526543fe572f4d4a8018ef3f59dfe4 with the user #b2b8af7be355a56c6ac68f21f6fb20e4
+2016-08-11 16:45:49 WARN  ConsoleAPI:274 - Unknown method specified. Type help to get more info.
+2016-08-11 16:45:49 ERROR ConsoleAPI:21 - To proceed this action you have to sign out and try again.
+2016-08-11 16:45:57 WARN  ConsoleAPI:274 - Unknown method specified. Type help to get more info.
+2016-08-11 16:46:02 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-11 16:46:08 WARN  ConsoleAPI:70 - An error occurred: Too small login
+2016-08-11 16:46:15 WARN  ConsoleAPI:70 - An error occurred: Too small login
+2016-08-11 16:46:34 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-11 16:46:52 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 16:47:12 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-11 16:47:28 INFO  ConsoleAPI:84 - Welcome, @Spartedo. You have been logged in!
+2016-08-11 16:47:44 ERROR ConsoleAPI:235 - Chat #bb2aff35c02e9f266cfda8d406f39ebe not found
+2016-08-11 17:01:09 INFO  Main:34 - jchat 1.0.8
+2016-08-11 17:01:09 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 17:01:29 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 17:01:29 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 17:01:29 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-11 17:01:29 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 17:01:29 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: a23742dfa1360ce945e0cb6908a17b49
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 17:01:46 INFO  ConsoleAPI:213 - Successfully created chat #6a04bf89b28069f963544eb61c8dc290 with the user #a23742dfa1360ce945e0cb6908a17b49
+2016-08-11 17:01:59 INFO  ConsoleAPI:224 - 
+ID: 6a04bf89b28069f963544eb61c8dc290
+Name: -
+Owner ID: 68cd1fd0ea923c6e27b71a40ae263b9e
+Owner Username: Leonid Fedotov
+Created Date: Sun Jan 18 03:35:24 MSK 1970
+Total messages: 0
+Total members: 1
+Chat status: private chat
+2016-08-11 17:02:20 INFO  ConsoleAPI:250 - 
+#a23742dfa1360ce945e0cb6908a17b49 @Pashkinata Pashkina Natalia
+2016-08-11 23:06:29 INFO  Main:34 - jchat 1.0.8
+2016-08-11 23:06:29 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 23:06:49 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 23:06:49 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 23:06:49 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-11 23:06:49 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 23:06:49 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 321eb8e605b3de84ac2e4faee0935bf4
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 23:07:18 INFO  Main:34 - jchat 1.0.8
+2016-08-11 23:07:18 DEBUG Main:35 - Startup arguments: [console]
+2016-08-11 23:07:27 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-11 23:07:27 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-11 23:07:27 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-11 23:07:27 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-11 23:07:27 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: fa89c4ebad9b2bd368be73e0ca841d6e
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 23:08:00 INFO  ConsoleAPI:252 - Successfully created chat #6b33287fc424c03e4d631d1ad0c9c3ea with the user #fa89c4ebad9b2bd368be73e0ca841d6e
+2016-08-11 23:08:22 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 449d18a60bfd7a4eaaae5f452f8f3bc7
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-11 23:08:34 INFO  ConsoleAPI:252 - Successfully created chat #fa70e7821a0704255d5315fdbc3708d8 with the user #449d18a60bfd7a4eaaae5f452f8f3bc7
+2016-08-11 23:08:57 INFO  ConsoleAPI:227 - You don't have any chats
+2016-08-11 23:09:23 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-11 23:09:46 INFO  ConsoleAPI:84 - Welcome, @Spartedo. You have been logged in!
+2016-08-11 23:09:57 INFO  ConsoleAPI:227 - You don't have any chats
+2016-08-12 00:13:07 INFO  Main:34 - jchat 1.0.8
+2016-08-12 00:13:07 DEBUG Main:35 - Startup arguments: [console]
+2016-08-12 00:13:11 WARN  ConsoleAPI:365 - Unknown method specified. Type help to get more info.
+2016-08-12 00:13:11 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-12 00:13:11 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-12 00:13:11 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-12 00:13:11 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-12 00:13:11 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 72fab37238f99e04a8a78646bba9dba4
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-12 00:13:21 INFO  ConsoleAPI:252 - Successfully created chat #a51c45cc1b23a6e2bb49692f90f4f34f with the user #72fab37238f99e04a8a78646bba9dba4
+2016-08-12 00:13:27 INFO  ConsoleAPI:222 - 
+#a51c45cc1b23a6e2bb49692f90f4f34f (private) - Leonid Fedotov
+2016-08-12 00:23:04 INFO  Main:34 - jchat 1.0.8
+2016-08-12 00:23:04 DEBUG Main:35 - Startup arguments: [console]
+2016-08-12 00:23:11 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-12 00:23:11 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-12 00:23:11 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-12 00:23:11 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-12 00:23:11 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: c13527f681a24cf272579e94f4d65cd9
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-12 00:23:23 INFO  ConsoleAPI:255 - Successfully created chat #121fa5382e8c30d69d62d118b9b73501 with the user #c13527f681a24cf272579e94f4d65cd9
+2016-08-12 00:23:27 INFO  ConsoleAPI:225 - 
+#121fa5382e8c30d69d62d118b9b73501 (private) Pashkina Natalia
+2016-08-12 00:24:00 WARN  ConsoleAPI:239 - Unknown method specified. Type help to get more info.
+2016-08-12 00:24:09 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 9cc9fb916a659f9ddeabef73cf95efff
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-12 00:24:55 INFO  ConsoleAPI:307 - Successfully invited user #9cc9fb916a659f9ddeabef73cf95efff to chat #121fa5382e8c30d69d62d118b9b73501
+2016-08-12 00:25:07 INFO  ConsoleAPI:225 - 
+#121fa5382e8c30d69d62d118b9b73501 (group) 2 users
+2016-08-12 00:25:25 INFO  ConsoleAPI:320 - Successfully leaved user #9cc9fb916a659f9ddeabef73cf95efff from chat #121fa5382e8c30d69d62d118b9b73501
+2016-08-12 00:25:31 INFO  ConsoleAPI:230 - You don't have any chats
+2016-08-12 00:27:48 INFO  Main:34 - jchat 1.0.8
+2016-08-12 00:27:48 DEBUG Main:35 - Startup arguments: [console]
+2016-08-12 00:28:01 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-12 00:28:01 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-12 00:28:01 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-12 00:28:01 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-12 00:28:01 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 3d349beeaae832d4954bd927f68caa86
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-12 00:28:31 INFO  Main:34 - jchat 1.0.8
+2016-08-12 00:28:31 DEBUG Main:35 - Startup arguments: [console]
+2016-08-12 00:28:32 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-12 00:28:32 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-12 00:28:32 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-12 00:28:32 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-12 00:28:32 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: b35056969d93af2b18303c58280247b8
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-12 00:28:42 INFO  ConsoleAPI:255 - Successfully created chat #373cd8d31fc55ef3296b93756876e12e with the user #b35056969d93af2b18303c58280247b8
+2016-08-12 00:28:48 INFO  ConsoleAPI:225 - 
+#373cd8d31fc55ef3296b93756876e12e (private) Pashkina Natalia
+2016-08-12 00:29:05 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 54b54e0960be7c8288408462eb4fe180
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-12 00:29:25 INFO  ConsoleAPI:307 - Successfully invited user #54b54e0960be7c8288408462eb4fe180 to chat #373cd8d31fc55ef3296b93756876e12e
+2016-08-12 00:29:33 INFO  ConsoleAPI:225 - 
+#373cd8d31fc55ef3296b93756876e12e (group) 2 users
+2016-08-12 00:29:50 INFO  ConsoleAPI:321 - Successfully leaved user #54b54e0960be7c8288408462eb4fe180 from chat #373cd8d31fc55ef3296b93756876e12e
+2016-08-12 00:29:57 INFO  ConsoleAPI:225 - 
+#373cd8d31fc55ef3296b93756876e12e (private) Pashkina Natalia
+2016-08-12 00:30:17 INFO  ConsoleAPI:333 - Successfully removed chat #373cd8d31fc55ef3296b93756876e12e
+2016-08-12 00:30:21 INFO  ConsoleAPI:227 - You don't have any chats
+2016-08-12 00:30:28 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-12 00:30:43 INFO  ConsoleAPI:84 - Welcome, @Pashkinata. You have been logged in!
+2016-08-12 00:30:49 INFO  ConsoleAPI:230 - You don't have any chats
+2016-08-12 00:31:01 INFO  ConsoleAPI:124 - 
+Username: iLeonidze
+ID: cb18bed009de20f296c7368be0834448
+Name: Leonid Fedotov
+Gender: male
+Last online: Sun Jan 18 03:35:51 MSK 1970
+Access level: 0
+Banned: false
+2016-08-12 00:31:09 INFO  ConsoleAPI:255 - Successfully created chat #6407882c1c893e3ee57d31042627c010 with the user #cb18bed009de20f296c7368be0834448
+2016-08-12 00:31:14 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-12 00:31:21 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-12 00:31:26 INFO  ConsoleAPI:225 - 
+#6407882c1c893e3ee57d31042627c010 (private) Leonid Fedotov
+2016-08-12 00:32:59 INFO  ConsoleAPI:333 - Successfully removed chat #6407882c1c893e3ee57d31042627c010
+2016-08-12 00:33:09 INFO  ConsoleAPI:225 - 
+#6407882c1c893e3ee57d31042627c010 (private) Leonid Fedotov
+2016-08-12 00:34:14 INFO  Main:34 - jchat 1.0.8
+2016-08-12 00:34:14 DEBUG Main:35 - Startup arguments: [console]

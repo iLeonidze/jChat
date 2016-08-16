@@ -57,6 +57,6 @@ chats messages  | :white_check_mark: | 0+ | Выводит n-е количест
 message         |
 message send    | :white_check_mark: | 0+ | Отправляет сообщение в чат
 message info    | :white_check_mark: | 0+ | Выводит подробную информацию о сообщении
-message forward | :x:                | 0 | Пересылает сообщение из одного чата в другой
+message forward | :white_check_mark: | 0 | Пересылает сообщение из одного чата в другой
 message delete  | :white_check_mark: | 0+ | Удаляет сообщение из чата
 message edit    | :white_check_mark: | 0+ | Редактирует сообщение в чате

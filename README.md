@@ -49,6 +49,7 @@ chats           |
 chats create    | :white_check_mark: | 0+ | Создает новый чат
 chats remove    | :white_check_mark: | 0+ | Удаляет указанный чат
 chats info      | :white_check_mark: | 0+ | Выводит общую информацию о чате
+chats rename    | :x:                | 0 | Переименовывает чат
 chats members   | :white_check_mark: | 0+ | Выводит список всех участников чата
 chats invite    | :white_check_mark: | 0+ | Добавляет пользователя в чат
 chats leave     | :white_check_mark: | 0+ | Выходит из состава участников или исключает участника из чата

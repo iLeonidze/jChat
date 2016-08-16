@@ -58,4 +58,4 @@ message         |
 message send    | :white_check_mark: | 0+ | Отправляет сообщение в чат
 message forward | :x:                | 0 | Пересылает сообщение из одного чата в другой
 message delete  | :white_check_mark: | 0+ | Удаляет сообщение из чата
-message edit    | :x:                | 0 | Редактирует сообщение в чате
+message edit    | :white_check_mark: | 0 | Редактирует сообщение в чате

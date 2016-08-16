@@ -37,11 +37,11 @@ user login      | :white_check_mark: |   | Авторизует анонима
 user logout     | :white_check_mark: | 0 | Деавторизует пользователя
 user authed     | :white_check_mark: | 0 | Сообщает о текущей сессии авторизации
 user info       | :white_check_mark: | 0 | Выводит информацию о текущем или указанном пользователе
-*user remove*   | :white_check_mark: | 2 | Удаляет пользователя
-*user ban*      | :white_check_mark: | 1+ | Блокирует пользователя
-*user unban*    | :white_check_mark: | 1+ | Разблокирует пользователя
+*user remove*   | :negative_squared_cross_mark: | 2 | Удаляет пользователя
+*user ban*      | :negative_squared_cross_mark: | 1+ | Блокирует пользователя
+*user unban*    | :negative_squared_cross_mark: | 1+ | Разблокирует пользователя
 user isbanned   | :white_check_mark: | 0 | Возвращает статус бана
-*user op*       | :white_check_mark: | 2 | Изменяет уровень доступа
+*user op*       | :negative_squared_cross_mark: | 2 | Изменяет уровень доступа
 user contacts   | :x:                | 0 | Выводит список всех знакомых
 user chats      | :white_check_mark: | 0 | Выводит список чатов, в которых пользователь участвует
 user edit       | :x:                | 0 | Редактирует информацию о пользователе

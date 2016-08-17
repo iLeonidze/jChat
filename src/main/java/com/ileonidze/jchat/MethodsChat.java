@@ -109,4 +109,29 @@ class MethodsChat {
         }
         return true;
     }
+    static List<VDBMessage> getMessages(String sessionHash,String chatID){
+        VDBChat selectedChat = getChat(sessionHash,chatID);
+        if(selectedChat == null) return null;
+        if(selectedChat.getID() == null) return null;
+        return selectedChat.getMessages(20);
+    }
+    static String getRenameError(String thisSession,String chatID,String chatName){
+        if(chatName.equals("")) return "Incorrect chat new name value";
+        if(thisSession==null||!MethodsUser.isSessionExists(thisSession)) return "Session is invalid. Try to relogin.";
+        VDBChat renamingChat = getChat(thisSession,chatID);
+        VDBUser userWhoRename = MethodsUser.getSessionUser(thisSession);
+        if(renamingChat == null) return "Chat is not exists";
+        if(userWhoRename == null || userWhoRename.getID() == null) return "Current session is invalid. Try to relogin.";
+        if(!renamingChat.getOwnerID().equals(userWhoRename.getID())&&userWhoRename.getAccessLevel()<1) return "Access denied";
+        int chatIterator = -1;
+        for(int i=0;i<VDB.chats.size();i++){
+            VDBChat chat = VDB.chats.get(i);
+            if(chat.getID().equals(chatID)){
+                chatIterator = i;
+            }
+        }
+        if(chatIterator < 0) return "Chat is not exists";
+        VDB.chats.set(chatIterator,renamingChat.setName(chatName));
+        return null;
+    }
 }

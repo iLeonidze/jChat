@@ -390,3 +390,276 @@ Banned: false
 #6407882c1c893e3ee57d31042627c010 (private) Leonid Fedotov
 2016-08-12 00:34:14 INFO  Main:34 - jchat 1.0.8
 2016-08-12 00:34:14 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 09:19:24 INFO  Main:34 - jchat 1.0.8
+2016-08-16 09:19:24 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 09:19:59 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-16 09:19:59 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-16 09:19:59 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-16 09:20:00 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-16 09:20:00 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 359d19f90b17588c8e8d825db5a3eca0
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 09:20:16 INFO  ConsoleAPI:255 - Successfully created chat #1edfe1744e9cb2002de7d434fd03e5ad with the user #359d19f90b17588c8e8d825db5a3eca0
+2016-08-16 09:20:33 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 27ff44dd5896c244fa467f5d8782467a
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 09:20:43 INFO  ConsoleAPI:307 - Successfully invited user #27ff44dd5896c244fa467f5d8782467a to chat #1edfe1744e9cb2002de7d434fd03e5ad
+2016-08-16 09:21:03 INFO  ConsoleAPI:351 - No messages
+2016-08-16 09:21:38 ERROR ConsoleAPI:373 - Chat is not exists
+2016-08-16 09:21:38 INFO  ConsoleAPI:390 - Application exit
+2016-08-16 09:23:46 INFO  Main:34 - jchat 1.0.8
+2016-08-16 09:23:46 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 09:23:53 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-16 09:23:53 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-16 09:23:53 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-16 09:23:53 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-16 09:23:53 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 1f8f24edab481f247c66204048e705c3
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 09:23:59 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 71ee2c0ce8d8a5a320304feaed8d8203
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 09:24:23 INFO  ConsoleAPI:255 - Successfully created chat #37c0f10b40fbbeedc5765f37e96b00a5 with the user #1f8f24edab481f247c66204048e705c3
+2016-08-16 09:24:35 ERROR ConsoleAPI:31 - Some fields are missing. To get more info use help.
+2016-08-16 09:25:00 INFO  ConsoleAPI:307 - Successfully invited user #71ee2c0ce8d8a5a320304feaed8d8203 to chat #37c0f10b40fbbeedc5765f37e96b00a5
+2016-08-16 09:25:30 ERROR ConsoleAPI:373 - Access denied
+2016-08-16 09:27:27 INFO  Main:34 - jchat 1.0.8
+2016-08-16 09:27:27 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 09:27:36 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-16 09:27:36 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-16 09:27:36 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-16 09:27:36 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-16 09:27:36 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: bafd625de84a0bc6ad4b4dbfa7677582
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 09:27:36 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 605b97c1ba20a2aefe44e0eec2006df4
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 09:27:53 INFO  ConsoleAPI:255 - Successfully created chat #127b5171372bd71e7215bc5b3498e658 with the user #bafd625de84a0bc6ad4b4dbfa7677582
+2016-08-16 09:28:07 INFO  ConsoleAPI:307 - Successfully invited user #605b97c1ba20a2aefe44e0eec2006df4 to chat #127b5171372bd71e7215bc5b3498e658
+2016-08-16 09:28:21 INFO  ConsoleAPI:375 - Sent
+2016-08-16 09:28:31 INFO  ConsoleAPI:349 - 
+2fb617bc134118b3a0189602e1cb790d e8531d59c72214ef7ec4eca7412cfa88 Leonid Fedotov  (Sun Jan 18 03:42:08 MSK 1970): Wazzup?
+2016-08-16 09:29:33 INFO  ConsoleAPI:375 - Sent
+2016-08-16 09:29:38 INFO  ConsoleAPI:349 - 
+2fb617bc134118b3a0189602e1cb790d e8531d59c72214ef7ec4eca7412cfa88 Leonid Fedotov  (Sun Jan 18 03:42:08 MSK 1970): Wazzup?
+d97c8ef7164873574fc84211419c7a75 e8531d59c72214ef7ec4eca7412cfa88 Leonid Fedotov  (Sun Jan 18 03:42:09 MSK 1970): How it\'s going?
+2016-08-16 09:30:10 INFO  ConsoleAPI:384 - Deleted
+2016-08-16 09:30:16 INFO  ConsoleAPI:349 - 
+2fb617bc134118b3a0189602e1cb790d e8531d59c72214ef7ec4eca7412cfa88 Leonid Fedotov  (Sun Jan 18 03:42:08 MSK 1970): Wazzup?
+2016-08-16 09:30:34 WARN  ConsoleAPI:421 - Unknown method specified. Type help to get more info.
+2016-08-16 09:30:40 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-16 09:30:51 INFO  ConsoleAPI:84 - Welcome, @Spartedo. You have been logged in!
+2016-08-16 09:30:57 INFO  ConsoleAPI:349 - 
+2fb617bc134118b3a0189602e1cb790d e8531d59c72214ef7ec4eca7412cfa88 Leonid Fedotov  (Sun Jan 18 03:42:08 MSK 1970): Wazzup?
+2016-08-16 09:31:27 INFO  ConsoleAPI:375 - Sent
+2016-08-16 09:31:33 INFO  ConsoleAPI:349 - 
+2fb617bc134118b3a0189602e1cb790d e8531d59c72214ef7ec4eca7412cfa88 Leonid Fedotov  (Sun Jan 18 03:42:08 MSK 1970): Wazzup?
+411857e592651c7e65e0ae882271825a 605b97c1ba20a2aefe44e0eec2006df4 Muhamed Khadri  (Sun Jan 18 03:42:09 MSK 1970): Yeah, dude, cool chat!
+2016-08-16 13:46:59 INFO  Main:34 - jchat 1.0.8
+2016-08-16 13:46:59 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 13:47:30 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-16 13:47:30 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-16 13:47:30 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-16 13:47:30 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-16 13:47:30 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: ac4957eb4c2ab0ef8562c577f3ca04ed
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 13:47:30 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 4c6617102b7393e461706cfeb087e28b
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 13:47:55 INFO  ConsoleAPI:255 - Successfully created chat #076bbf9ba5593d78135fbf42e532dd18 with the user #ac4957eb4c2ab0ef8562c577f3ca04ed
+2016-08-16 13:48:17 INFO  ConsoleAPI:307 - Successfully invited user #4c6617102b7393e461706cfeb087e28b to chat #076bbf9ba5593d78135fbf42e532dd18
+2016-08-16 13:52:32 INFO  ConsoleAPI:375 - Sent
+2016-08-16 13:52:44 INFO  ConsoleAPI:349 - 
+eb1399fb8e07b8821ccb15d01ba10667 4d5b3f56f206cdeefaf1b6d5425cb42e Leonid Fedotov  (Sun Jan 18 03:42:24 MSK 1970): Hello
+2016-08-16 13:53:17 WARN  ConsoleAPI:359 - Unknown method specified. Type help to get more info.
+2016-08-16 13:53:44 INFO  ConsoleAPI:393 - Modified
+2016-08-16 13:53:53 INFO  ConsoleAPI:349 - 
+eb1399fb8e07b8821ccb15d01ba10667 4d5b3f56f206cdeefaf1b6d5425cb42e Leonid Fedotov  (Sun Jan 18 03:42:24 MSK 1970): Hello, bitch
+2016-08-16 14:17:26 INFO  Main:34 - jchat 1.0.8
+2016-08-16 14:17:26 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 14:17:31 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-16 14:17:31 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-16 14:17:31 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-16 14:17:31 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-16 14:17:31 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: d3b86155ebe023deb1e4a253ddbc2b86
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 14:17:31 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 3f957a517c2386dedb3224079e407cc9
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 14:17:41 INFO  ConsoleAPI:255 - Successfully created chat #7025babac06a1d88389122d96b858b95 with the user #d3b86155ebe023deb1e4a253ddbc2b86
+2016-08-16 14:17:58 INFO  ConsoleAPI:307 - Successfully invited user #3f957a517c2386dedb3224079e407cc9 to chat #7025babac06a1d88389122d96b858b95
+2016-08-16 14:19:06 INFO  ConsoleAPI:375 - Sent
+2016-08-16 14:19:15 ERROR ConsoleAPI:31 - Some fields are missing. To get more info use help.
+2016-08-16 14:20:20 INFO  ConsoleAPI:349 - 
+001074d163ef8f619b1088e2fca5c3de 6156409b4d689ed8239abdb2019d057e Leonid Fedotov (Sun Jan 18 03:42:26 MSK 1970): Hi
+2016-08-16 14:20:42 INFO  ConsoleAPI:382 - 
+Message ID: 001074d163ef8f619b1088e2fca5c3de
+Chat ID: 7025babac06a1d88389122d96b858b95
+Owner user ID: 6156409b4d689ed8239abdb2019d057e
+Creator user ID: 6156409b4d689ed8239abdb2019d057e
+Message body: Hi
+Forwarded: false
+Sent time: Sun Jan 18 03:42:26 MSK 1970
+2016-08-16 16:40:22 INFO  Main:34 - jchat 1.0.8
+2016-08-16 16:40:22 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 16:41:49 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-16 16:41:49 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-16 16:41:49 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-16 16:41:49 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-16 16:41:49 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: b6f2eaa2fb06657e392d196f57b90e2c
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 16:41:49 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: a943fd1b037cabce8ba928a7fbc5452f
+Name: Muhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 16:42:37 INFO  ConsoleAPI:255 - Successfully created chat #d3aec84d870ef5b6a7f5cfb5656ea09d with the user #b6f2eaa2fb06657e392d196f57b90e2c
+2016-08-16 16:42:51 INFO  ConsoleAPI:307 - Successfully invited user #b6f2eaa2fb06657e392d196f57b90e2c to chat #d3aec84d870ef5b6a7f5cfb5656ea09d
+2016-08-16 16:43:45 INFO  Main:34 - jchat 1.0.8
+2016-08-16 16:43:45 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 16:43:54 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-16 16:43:54 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-16 16:43:54 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-16 16:43:54 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-16 16:43:54 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 16a6cb7fa5b62096902adfa7b68958ba
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 16:43:54 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: 64928d1e04faee9672d3938d904a22b5
+Name: Mukhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 16:44:08 INFO  ConsoleAPI:255 - Successfully created chat #f4f874456fb331d6b94ee249d859bb00 with the user #16a6cb7fa5b62096902adfa7b68958ba
+2016-08-16 16:44:26 INFO  ConsoleAPI:307 - Successfully invited user #64928d1e04faee9672d3938d904a22b5 to chat #f4f874456fb331d6b94ee249d859bb00
+2016-08-16 16:44:56 INFO  ConsoleAPI:375 - Sent
+2016-08-16 16:45:07 INFO  ConsoleAPI:349 - 
+1f6084b6cc9b9ac5f3f0dc429b5636e7 c96d442accd506b6794d31b82207d864 Leonid Fedotov (Sun Jan 18 03:42:35 MSK 1970): Hello
+2016-08-16 16:46:02 INFO  ConsoleAPI:93 - You have been successfully deauthed!
+2016-08-16 16:46:15 INFO  ConsoleAPI:84 - Welcome, @Pashkinata. You have been logged in!
+2016-08-16 16:46:25 WARN  ConsoleAPI:359 - Unknown method specified. Type help to get more info.
+2016-08-16 16:46:58 INFO  ConsoleAPI:225 - 
+#f4f874456fb331d6b94ee249d859bb00 (group) 2 users
+2016-08-16 16:47:28 INFO  ConsoleAPI:375 - Sent
+2016-08-16 16:47:34 INFO  ConsoleAPI:349 - 
+1f6084b6cc9b9ac5f3f0dc429b5636e7 c96d442accd506b6794d31b82207d864 Leonid Fedotov (Sun Jan 18 03:42:35 MSK 1970): Hello
+84420a9fc17a8bb1bd0709b3f1a5785a 16a6cb7fa5b62096902adfa7b68958ba Pashkina Natalia (Sun Jan 18 03:42:35 MSK 1970): Welcome
+2016-08-16 17:23:11 INFO  ConsoleAPI:255 - Successfully created chat #8869216bcf5013b7f565c6c74cbfccda with the user #64928d1e04faee9672d3938d904a22b5
+2016-08-16 17:23:54 ERROR ConsoleAPI:417 - Access to message #1f6084b6cc9b9ac5f3f0dc429b5636e7 denied
+2016-08-16 17:24:32 INFO  ConsoleAPI:419 - Forwarded
+2016-08-16 17:24:51 INFO  ConsoleAPI:349 - 
+84420a9fc17a8bb1bd0709b3f1a5785a 16a6cb7fa5b62096902adfa7b68958ba Pashkina Natalia (Sun Jan 18 03:42:35 MSK 1970): Welcome
+2016-08-16 17:25:05 ERROR ConsoleAPI:31 - Some fields are missing. To get more info use help.
+2016-08-16 17:25:21 INFO  ConsoleAPI:382 - 
+Message ID: 84420a9fc17a8bb1bd0709b3f1a5785a
+Chat ID: f4f874456fb331d6b94ee249d859bb00
+Owner user ID: 16a6cb7fa5b62096902adfa7b68958ba
+Creator user ID: 16a6cb7fa5b62096902adfa7b68958ba
+Message body: Welcome
+Forwarded: false
+Sent time: Sun Jan 18 03:42:35 MSK 1970
+2016-08-16 17:36:12 INFO  Main:34 - jchat 1.0.8
+2016-08-16 17:36:12 DEBUG Main:35 - Startup arguments: [console]
+2016-08-16 17:36:25 INFO  ConsoleAPI:68 - User @iLeonidze have been successfully registered!
+2016-08-16 17:36:25 INFO  ConsoleAPI:68 - User @Pashkinata have been successfully registered!
+2016-08-16 17:36:25 INFO  ConsoleAPI:68 - User @Spartedo have been successfully registered!
+2016-08-16 17:36:25 INFO  ConsoleAPI:84 - Welcome, @iLeonidze. You have been logged in!
+2016-08-16 17:36:25 INFO  ConsoleAPI:124 - 
+Username: Pashkinata
+ID: 4f30bbfa9ef301a9ba71a5cc64d90b24
+Name: Pashkina Natalia
+Gender: female
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 17:36:25 INFO  ConsoleAPI:124 - 
+Username: Spartedo
+ID: dfc4fea3fdb02a2716b5b25888cc5f91
+Name: Mukhamed Khadri
+Gender: male
+Last online: Thu Jan 01 03:00:00 MSK 1970
+Access level: 0
+Banned: false
+2016-08-16 17:36:32 INFO  ConsoleAPI:255 - Successfully created chat #2d21fdd695d0bd61cd2263e2b61ca98b with the user #dfc4fea3fdb02a2716b5b25888cc5f91
+2016-08-16 17:36:47 INFO  ConsoleAPI:307 - Successfully invited user #4f30bbfa9ef301a9ba71a5cc64d90b24 to chat #2d21fdd695d0bd61cd2263e2b61ca98b
+2016-08-16 17:37:08 INFO  ConsoleAPI:343 - Successfully renamed chat #2d21fdd695d0bd61cd2263e2b61ca98b
+2016-08-16 17:37:18 INFO  ConsoleAPI:266 - 
+ID: 2d21fdd695d0bd61cd2263e2b61ca98b
+Name: Squad
+Owner ID: acad48f8ab1b3c7e649fbaaa57b0122a
+Owner Username: Leonid Fedotov
+Created Date: Sun Jan 18 03:42:38 MSK 1970
+Total messages: 0
+Total members: 2
+Chat status: group chat
+2016-08-16 17:37:28 INFO  ConsoleAPI:225 - 
+#2d21fdd695d0bd61cd2263e2b61ca98b (group) Squad

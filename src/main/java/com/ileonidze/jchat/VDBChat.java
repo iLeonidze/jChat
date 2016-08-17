@@ -11,7 +11,7 @@ class VDBChat {
     private List<String> membersIDs = new ArrayList<String>();
     private int createdTime = Math.round(new Date().getTime()/1000);
     private boolean isGroupStatus = false;
-    private ArrayList<VDBMessage> messages = new ArrayList<>();
+    private List<VDBMessage> messages = new ArrayList<>();
 
     VDBChat init(String name, String ownerID, String opponentUserID){
         this.name = name;
@@ -57,6 +57,7 @@ class VDBChat {
 
     VDBChat pushToMessages(VDBMessage message){
         if(!messages.contains(message)) messages.add(message);
+        if(messages.size()>2000) messages = messages.subList(Math.max(2000, 0), messages.size());
         return this;
     }
     VDBChat removeFromMessages(VDBMessage message){
@@ -68,4 +69,21 @@ class VDBChat {
         return messages.subList(Math.max(messages.size() - length, 0), messages.size());
     }
     int getMessagesSize(){ return messages.size(); }
+    VDBMessage getMessage(String messageID){
+        for(VDBMessage message: messages){
+            if(message.getID().equals(messageID)){
+                return message;
+            }
+        }
+        return null;
+    }
+    VDBChat editMessage(String messageID,String messageBody){
+        for(VDBMessage message: messages){
+            if(message.getID().equals(messageID)){
+                messages.set(messages.indexOf(message),message.setBody(messageBody));
+                return this;
+            }
+        }
+        return this;
+    }
 }

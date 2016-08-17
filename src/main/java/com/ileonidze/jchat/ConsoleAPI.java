@@ -208,7 +208,7 @@ class ConsoleAPI {
                                             if(chatObject.getName() != null){
                                                 chatName = chatObject.getName();
                                             }else{
-                                                chatName = chatObject.getMembersIDs().size()+" users";
+                                                chatName = (chatObject.getMembersIDs().size()+1)+" users";
                                             }
                                         }else{
                                             VDBUser ownerChatUser = MethodsUser.getUserByID(thisSession,chatObject.getOwnerID());
@@ -336,6 +336,100 @@ class ConsoleAPI {
                         }
                         break;
 
+                    case "rename":
+                        if(isCatchedIncorrectSessionState(true)||isCatchedIncorrectCommandPartsLength(4,commandParts)) break;
+                        String renameError = MethodsChat.getRenameError(thisSession,commandParts[2],commandParts[3]);
+                        if(renameError == null){
+                            console.info("Successfully renamed chat #"+commandParts[2]);
+                        }else{
+                            console.error(renameError);
+                        }
+                        break;
+
+                    case "messages":
+                        if(isCatchedIncorrectSessionState(true)||isCatchedIncorrectCommandPartsLength(3,commandParts)) break;
+                        List<VDBMessage> messagesList = MethodsChat.getMessages(thisSession,commandParts[2]);
+                        if(messagesList != null){
+                            String consoleMessagesOutput = "";
+                            if(messagesList.size()>0){
+                                for(VDBMessage message: messagesList){
+                                    VDBUser messageSender = MethodsUser.getUserByID(thisSession,message.getOwnerID());
+                                    if(messageSender != null && messageSender.getName() != null) consoleMessagesOutput += "\n"+message.getID()+" "+message.getOwnerID()+" "+messageSender.getName()+" ("+new Date(message.getSentTime())+"): "+message.getBody();
+                                }
+                                console.info(consoleMessagesOutput);
+                            }else{
+                                console.info("No messages");
+                            }
+                        }else{
+                            console.error("Can\'t load messages from chat #"+commandParts[2]);
+                        }
+                        break;
+
+                    default:
+                        console.warn("Unknown method specified. Type help to get more info.");
+                }
+                break;
+
+            case "message":
+                if(commandParts.length<2){
+                    console.warn("No method specified. Type help to get more info.");
+                    break;
+                }
+                switch (commandParts[1].toLowerCase()){
+                    case "send":
+                        if(isCatchedIncorrectSessionState(true)||isCatchedIncorrectCommandPartsLength(4,commandParts)) break;
+                        String messageSendError = MethodsMessage.getSendError(thisSession,commandParts[2],commandParts[3]);
+                        if(messageSendError != null){
+                            console.error(messageSendError);
+                        }else{
+                            console.info("Sent");
+                        }
+                        break;
+                    case "info":
+                        if(isCatchedIncorrectSessionState(true)||isCatchedIncorrectCommandPartsLength(4,commandParts)) break;
+                        VDBMessage messageObject = MethodsMessage.getMessageInfo(thisSession,commandParts[2],commandParts[3]);
+                        if(messageObject != null){
+                            console.info(""+
+                            "\nMessage ID: "+messageObject.getID()+
+                            "\nChat ID: "+messageObject.getChatID()+
+                            "\nOwner user ID: "+messageObject.getOwnerID()+
+                            "\nCreator user ID: "+messageObject.getCreatorID()+
+                            "\nMessage body: "+messageObject.getBody()+
+                            "\nForwarded: "+messageObject.isForwarded()+
+                            "\nSent time: "+new Date(messageObject.getSentTime())+
+                            "");
+                        }else{
+                            console.error("Can\'t get message #"+commandParts[2]);
+                        }
+                        break;
+                    case "delete":
+                        if(isCatchedIncorrectSessionState(true)||isCatchedIncorrectCommandPartsLength(4,commandParts)) break;
+                        String messageDeleteError = MethodsMessage.getDeleteError(thisSession,commandParts[2],commandParts[3]);
+                        if(messageDeleteError != null){
+                            console.error(messageDeleteError);
+                        }else{
+                            console.info("Deleted");
+                        }
+                        break;
+                    case "edit":
+                        if(isCatchedIncorrectSessionState(true)||isCatchedIncorrectCommandPartsLength(5,commandParts)) break;
+                        String messageModifyError = MethodsMessage.getModifyError(thisSession,commandParts[2],commandParts[3],commandParts[4]);
+                        if(messageModifyError != null){
+                            console.error(messageModifyError);
+                        }else{
+                            console.info("Modified");
+                        }
+                        break;
+                    case "forward":
+                        if(isCatchedIncorrectSessionState(true)||isCatchedIncorrectCommandPartsLength(5,commandParts)) break;
+                        String messageForwardError = MethodsMessage.getForwardError(thisSession,commandParts[2],commandParts[3],commandParts[4]);
+                        if(messageForwardError != null){
+                            console.error(messageForwardError);
+                        }else{
+                            console.info("Forwarded");
+                        }
+                        break;
+
                     default:
                         console.warn("Unknown method specified. Type help to get more info.");
                 }
@@ -363,7 +457,11 @@ class ConsoleAPI {
                         "\n\t\tisbanned [0] <userid> - return user banned state"+
                         "\n\tchat" +
                         "\n\t\tcreate [0] <userid> <name> - create new chat with specified user and name it. Skip name if you want."+
-                        "\n\t\tinfo [0] <chatid> - get chat brief information"+
+                        "\n\t\tinfo [0] <chatid> - get chat brief information."+
+                        "\n\tmessage" +
+                        "\n\t\tsend [0] <chatid> <text> - send your message to selected chat."+
+                        "\n\t\tget [0] <chatid> <messageid> - get full info about message."+
+                        "\n\t\tdelete [0] <chatid> <messageid> - delete message from selected chat."+
                         "\n\n\tUse \\s to specify whitespace in your parameter, \\n to set new line. Warning: \\\\s or \\\\n don\'t work!\n"
                 );
                 break;

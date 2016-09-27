@@ -1,6 +1,6 @@
 package com.ileonidze.jchat;
 
-public class RegistrationLoginTestFactory extends RegistrationTestFactory {
+class RegistrationLoginTestFactory extends RegistrationTestFactory {
     public String test(String login, String password, String name, String email, String gender) {
         if(login==null) return "Incorrect login value";
         if(login.length() < 8) return "Too small login";

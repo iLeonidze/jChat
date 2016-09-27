@@ -6,7 +6,7 @@ class MethodsUser {
     private static MD5 md5 = new MD5();
     private static Validate tests = new Validate();
 
-    String register(String userName, String password, String name,String email,String gender){
+    static String register(String userName, String password, String name,String email,String gender){
         String testsResult = tests.RegistrationCredentials(userName, password, name, email, gender);
         if(testsResult!=null) return testsResult;
         for(VDBUser user: VDB.users){
@@ -20,7 +20,7 @@ class MethodsUser {
         return null;
     }
 
-    String login(String userName, String password){
+    static String login(String userName, String password){
         for(VDBUser user: VDB.users){
             if(user.getLogin().toLowerCase().equals(userName.toLowerCase())&&user.isPasswordsEqual(password)){
                 user.updateLoggedInTime();
@@ -31,7 +31,7 @@ class MethodsUser {
         return null;
     }
 
-    private String createSession(String userID){
+    static private String createSession(String userID){
         // TODO: check userID exists
         for(int i=0;i<VDB.sessions.size();i++){
             VDBSession session = VDB.sessions.get(i);
@@ -45,7 +45,7 @@ class MethodsUser {
         return newHash;
     }
 
-    boolean destroySession(String sessionHash){
+    static boolean destroySession(String sessionHash){
         for(int i=0;i<VDB.sessions.size();i++){
             if(VDB.sessions.get(i).getHash().equals(sessionHash)){
                 VDB.sessions.remove(i);
@@ -106,7 +106,7 @@ class MethodsUser {
         }
         return new VDBUser();
     }
-    boolean removeUser(String sessionHash, String userID){
+    static boolean removeUser(String sessionHash, String userID){
         // TODO: remove user from contacts & chats
         if(sessionHash==null||!isSessionExists(sessionHash)) return false;
         for(int i=0;i<VDB.users.size();i++){
@@ -117,7 +117,7 @@ class MethodsUser {
         }
         return false;
     }
-    boolean setBanStateUser(String sessionHash, String userID, boolean banState){
+    static boolean setBanStateUser(String sessionHash, String userID, boolean banState){
         if(sessionHash==null||!isSessionExists(sessionHash)) return false;
         for(int i=0;i<VDB.users.size();i++){
             VDBUser user = VDB.users.get(i);
@@ -137,7 +137,7 @@ class MethodsUser {
         }
         return false;
     }
-    boolean opUser(String sessionHash, String userID, int accessLevel){
+    static boolean opUser(String sessionHash, String userID, int accessLevel){
         if(sessionHash==null||!isSessionExists(sessionHash)) return false;
         for(int i=0;i<VDB.users.size();i++){
             VDBUser user = VDB.users.get(i);
@@ -148,7 +148,7 @@ class MethodsUser {
         }
         return false;
     }
-    boolean modifyUser(String sessionHash, String userID, String settingName, String sessionValue){
+    static boolean modifyUser(String sessionHash, String userID, String settingName, String sessionValue){
         if(sessionHash==null||!isSessionExists(sessionHash)) return false;
         for(int i=0;i<VDB.users.size();i++){
             VDBUser user = VDB.users.get(i);

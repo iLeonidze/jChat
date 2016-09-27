@@ -1,7 +1,7 @@
 package com.ileonidze.jchat;
 /**
  * Start or stop CMD listening
- * On input send command to {@link com.ileonidze.jchat.ConsoleAPI#parce Console API Parcer}
+ * On input send command to {@link com.ileonidze.jchat.ConsoleAPI#parse Console API Parcer}
  * @autor iLeonidze
  * @since 0.1
  * @version 0.1
@@ -11,7 +11,7 @@ package com.ileonidze.jchat;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
 
-public class ConsoleListener {
+class ConsoleListener {
     private static ConsoleAPI consoleAPI = new ConsoleAPI();
     private static final Logger console = Logger.getLogger(ConsoleAPI.class);
     private Scanner scanner = new Scanner(System.in);
@@ -25,18 +25,18 @@ public class ConsoleListener {
     private static boolean state = false;
 
     /**
-     * Start listening console input and send all commands to {@link com.ileonidze.jchat.ConsoleAPI#parce Console API Parcer}
+     * Start listening console input and send all commands to {@link com.ileonidze.jchat.ConsoleAPI#parse Console API Parcer}
      * It exists till {@link ConsoleListener#stop stop} called or process die
      * @see com.ileonidze.jchat.ConsoleAPI
      * @return always true
      */
-    public boolean run(){
+    boolean run(){
         if(!state) state = true;
         do{
             console.trace("Command:");
             String command = scanner.nextLine();
             console.trace("User prompted: "+command);
-            consoleAPI.parce(command);
+            consoleAPI.parse(command);
             if(state){ // This "if" stop console in "false" case
                 run();
             }
@@ -49,7 +49,7 @@ public class ConsoleListener {
      * @see ConsoleListener#run
      * @return if listening was stopped or not - true or false
      */
-    public boolean stop(){
+    boolean stop(){
         if(state){
             state = false;
         }

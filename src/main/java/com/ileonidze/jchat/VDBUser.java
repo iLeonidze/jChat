@@ -1,10 +1,11 @@
 package com.ileonidze.jchat;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-class VDBUser {
+class VDBUser implements Serializable {
     private static MD5 md5 = new MD5();
     private String id;
     private String login;

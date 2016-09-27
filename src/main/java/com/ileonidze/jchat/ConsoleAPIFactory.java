@@ -1,5 +1,5 @@
 package com.ileonidze.jchat;
 
-public abstract class ConsoleAPIFactory {
-    public abstract String proceed(String[] commandParts);
+abstract class ConsoleAPIFactory {
+    abstract String proceed(String[] commandParts);
 }

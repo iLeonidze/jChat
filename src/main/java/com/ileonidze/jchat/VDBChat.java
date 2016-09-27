@@ -1,10 +1,11 @@
 package com.ileonidze.jchat;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-class VDBChat {
+class VDBChat implements Serializable {
     private String id;
     private String name;
     private String ownerID;

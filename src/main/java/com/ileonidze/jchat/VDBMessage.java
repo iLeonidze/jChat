@@ -1,8 +1,9 @@
 package com.ileonidze.jchat;
 
+import java.io.Serializable;
 import java.util.Date;
 
-class VDBMessage {
+class VDBMessage implements Serializable {
     private String id;
     private String ownerID;
     private String creatorID;

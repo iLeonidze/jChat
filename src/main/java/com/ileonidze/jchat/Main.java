@@ -101,7 +101,7 @@ public class Main {
 
     public static void main(String[] args) {
         executionArguments = args;
-        console.info("jchat 1.0.12");
+        console.info("jchat 1.0.13");
         console.debug("Startup arguments: " + Arrays.toString(args));
 
         if (Arrays.asList(args).contains("json") || Arrays.asList(args).contains("snapshot")) {

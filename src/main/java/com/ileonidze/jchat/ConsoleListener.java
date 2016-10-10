@@ -2,13 +2,15 @@ package com.ileonidze.jchat;
 /**
  * Start or stop CMD listening
  * On input send command to {@link com.ileonidze.jchat.ConsoleAPI#parse Console API Parcer}
+ *
  * @autor iLeonidze
- * @since 0.1
  * @version 0.1
  * @link https://github.com/iLeonidze/jchat_console
+ * @since 0.1
  */
 
 import java.util.Scanner;
+
 import org.apache.log4j.Logger;
 
 class ConsoleListener {
@@ -30,17 +32,17 @@ class ConsoleListener {
      * @see com.ileonidze.jchat.ConsoleAPI
      * @return always true
      */
-    boolean run(){
-        if(!state) state = true;
-        do{
+    boolean run() {
+        if (!state) state = true;
+        do {
             console.trace("Command:");
             String command = scanner.nextLine();
-            console.trace("User prompted: "+command);
+            console.trace("User prompted: " + command);
             consoleAPI.parse(command);
-            if(state){ // This "if" stop console in "false" case
+            if (state) { // This "if" stop console in "false" case
                 run();
             }
-        }while(state);
+        } while (state);
         return true;
     }
 
@@ -49,8 +51,8 @@ class ConsoleListener {
      * @see ConsoleListener#run
      * @return if listening was stopped or not - true or false
      */
-    boolean stop(){
-        if(state){
+    boolean stop() {
+        if (state) {
             state = false;
         }
         return !state;
@@ -62,7 +64,7 @@ class ConsoleListener {
      * @see ConsoleListener#stop
      * @return true/false
      */
-    public boolean is_listening(){
+    public boolean is_listening() {
         return state;
     }
 }

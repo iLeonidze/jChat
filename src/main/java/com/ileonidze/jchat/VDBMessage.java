@@ -9,15 +9,15 @@ class VDBMessage implements Serializable {
     private String creatorID;
     private String chatID;
     private boolean forwarded = false;
-    private int sentTime = Math.round(new Date().getTime()/1000);
+    private int sentTime = Math.round(new Date().getTime() / 1000);
     private String body;
 
-    VDBMessage init(String id, String ownerID, String chatID, String body){
+    VDBMessage init(String id, String ownerID, String chatID, String body) {
         this.id = id;
         this.ownerID = ownerID;
-        if(creatorID == null){
+        if (creatorID == null) {
             creatorID = ownerID;
-        }else{
+        } else {
             forwarded = true;
         }
         this.chatID = chatID;
@@ -25,46 +25,61 @@ class VDBMessage implements Serializable {
         return this;
     }
 
-    VDBMessage setID(String id){
+    VDBMessage setID(String id) {
         this.id = id;
         return this;
     }
-    String getID(){ return id; }
 
-    VDBMessage setOwnerID(String ownerID){
+    String getID() {
+        return id;
+    }
+
+    VDBMessage setOwnerID(String ownerID) {
         this.ownerID = ownerID;
-        if(creatorID == null){
+        if (creatorID == null) {
             creatorID = ownerID;
-        }else{
+        } else {
             forwarded = true;
         }
         return this;
     }
-    String getOwnerID(){ return ownerID; }
 
-    String getCreatorID(){ return creatorID; }
+    String getOwnerID() {
+        return ownerID;
+    }
 
-    VDBMessage setChatID(String chatID){
+    String getCreatorID() {
+        return creatorID;
+    }
+
+    VDBMessage setChatID(String chatID) {
         this.chatID = chatID;
         return this;
     }
-    String getChatID(){ return chatID; }
 
-    int getSentTime(){
+    String getChatID() {
+        return chatID;
+    }
+
+    int getSentTime() {
         return sentTime;
     }
 
-    boolean isForwarded(){
+    boolean isForwarded() {
         return forwarded;
     }
-    VDBMessage setForwarded(boolean forwarded){
+
+    VDBMessage setForwarded(boolean forwarded) {
         this.forwarded = forwarded;
         return this;
     }
 
-    VDBMessage setBody(String body){
+    VDBMessage setBody(String body) {
         this.body = body;
         return this;
     }
-    String getBody(){ return body; }
+
+    String getBody() {
+        return body;
+    }
 }

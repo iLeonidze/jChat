@@ -5,6 +5,7 @@ import java.nio.file.AccessDeniedException;
 import java.util.*;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.apache.log4j.Logger;
 
 /*
@@ -24,23 +25,24 @@ public class Main {
     private static boolean workingStatus = false;
     private static SelfService service = new SelfService();
     private static final Thread selfServiceThread = new Thread(() -> {
-        new Timer().scheduleAtFixedRate(new TimerTask(){
+        new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
-            public void run(){
-                if(!workingStatus){
+            public void run() {
+                if (!workingStatus) {
                     workingStatus = true;
                     service.proceed(executionArguments);
                     workingStatus = false;
                 }
             }
-        },0,100);
+        }, 0, 100);
     });
+
     //LOG4J: FATAL,ERROR,WARN,INFO,DEBUG;TRACE
-    private static long VDBRestore(){
-        String[] snapshotParts = {"chats","users","sessions"};
+    private static long VDBRestore() {
+        String[] snapshotParts = {"chats", "users", "sessions"};
         long usageAnaliticsMTimestampStart = new Date().getTime();
-        for(String snapshotPartName: snapshotParts){
-            if(Arrays.asList(executionArguments).contains("snapshot")) {
+        for (String snapshotPartName : snapshotParts) {
+            if (Arrays.asList(executionArguments).contains("snapshot")) {
                 try {
                     FileInputStream fileIn = new FileInputStream("vdb/vdb." + snapshotPartName + ".snapshot");
                     ObjectInputStream in = new ObjectInputStream(fileIn);
@@ -57,61 +59,70 @@ public class Main {
                     }
                     in.close();
                     fileIn.close();
-                }catch(FileNotFoundException ex){
-                    console.warn("No "+snapshotPartName+" VDB-snapshot was found");
-                }catch(AccessDeniedException ex){
-                    console.warn(snapshotPartName+" VDB-snapshot is locked by other program. "+snapshotPartName+" will be reset.");
-                }catch(ClassNotFoundException ex) {
-                    console.warn("Incorrect "+snapshotPartName+" VDB snapshot structure - no such class was found");
-                }catch(EOFException ex){
-                    console.warn(snapshotPartName+" snapshot is incompatible with this jChat version. "+snapshotPartName+" will be reset.");
-                }catch(IOException ex){
-                    console.warn("Database "+snapshotPartName+" restoring error");
+                } catch (FileNotFoundException ex) {
+                    console.warn("No " + snapshotPartName + " VDB-snapshot was found");
+                } catch (AccessDeniedException ex) {
+                    console.warn(snapshotPartName + " VDB-snapshot is locked by other program. " + snapshotPartName + " will be reset.");
+                } catch (ClassNotFoundException ex) {
+                    console.warn("Incorrect " + snapshotPartName + " VDB snapshot structure - no such class was found");
+                } catch (EOFException ex) {
+                    console.warn(snapshotPartName + " snapshot is incompatible with this jChat version. " + snapshotPartName + " will be reset.");
+                } catch (IOException ex) {
+                    console.warn("Database " + snapshotPartName + " restoring error");
                     ex.printStackTrace();
                 }
             }
-            if(Arrays.asList(executionArguments).contains("json")){
+            if (Arrays.asList(executionArguments).contains("json")) {
                 try {
-                    switch (snapshotPartName){
+                    switch (snapshotPartName) {
                         case "chats":
-                            VDB.chats = gson.fromJson(new FileReader("vdb/vdb.chats.json"), VDB.chats.getClass());
+                            VDB.chats = gson.fromJson(new FileReader("vdb/vdb.chats.json"), new TypeToken<ArrayList<VDBChat>>() {
+                            }.getType());
+                            if (VDB.chats == null) VDB.chats = new ArrayList<>();
                             break;
                         case "users":
-                            VDB.users = gson.fromJson(new FileReader("vdb/vdb.users.json"), VDB.users.getClass());
+                            VDB.users = gson.fromJson(new FileReader("vdb/vdb.users.json"), new TypeToken<ArrayList<VDBUser>>() {
+                            }.getType());
+                            if (VDB.users == null) VDB.users = new ArrayList<>();
                             break;
                         case "sessions":
-                            VDB.sessions = gson.fromJson(new FileReader("vdb/vdb.sessions.json"), VDB.sessions.getClass());
+                            VDB.sessions = gson.fromJson(new FileReader("vdb/vdb.sessions.json"), new TypeToken<ArrayList<VDBSession>>() {
+                            }.getType());
+                            if (VDB.sessions == null) VDB.sessions = new ArrayList<>();
                             break;
-                        }
-                }catch(FileNotFoundException ex){
-                    console.warn("No "+snapshotPartName+" VDB-snapshot was found");
+                    }
+                } catch (FileNotFoundException ex) {
+                    console.warn("No " + snapshotPartName + " VDB-snapshot was found");
                 }
             }
         }
-        return new Date().getTime()-usageAnaliticsMTimestampStart;
+        return new Date().getTime() - usageAnaliticsMTimestampStart;
     }
 
     public static void main(String[] args) {
         executionArguments = args;
-        // Here jchat determine what type of run user wants
-        console.info("jchat 1.0.10");
-        console.debug("Startup arguments: "+Arrays.toString(args));
-        if(Arrays.asList(args).contains("vdb")){
-            console.info("Restoring VDB from snapshot...");
+        console.info("jchat 1.0.12");
+        console.debug("Startup arguments: " + Arrays.toString(args));
+
+        if (Arrays.asList(args).contains("json") || Arrays.asList(args).contains("snapshot")) {
+            console.info("Restoring VDB from " + (Arrays.asList(args).contains("json") ? "JSON" : "Snapshot") + "...");
             long restoringTime = VDBRestore();
+
             console.info("Users: " + VDB.users.size());
             console.info("Sessions: " + VDB.sessions.size());
             console.info("Chats: " + VDB.chats.size());
             console.info("Restoring was performed for " + (restoringTime / 1000) + " seconds");
+
             if (!Arrays.asList(args).contains("noSelfService")) {
                 selfServiceThread.start();
             }
         }
-        if(Arrays.asList(args).contains("console")) { // here we are switching into console mode
+
+        if (Arrays.asList(args).contains("console")) { // here we are switching into console mode
             consoleListening.run();
-        }else if(Arrays.asList(args).contains("server")){ // here we are running server // TODO NIO
+        } else if (Arrays.asList(args).contains("server")) { // here we are running server // TODO NIO
             console.warn("Server mode is not implemented yet");
-        }else{
+        } else {
             console.error("Startup arguments is not specified. For console mode - specify \"console\" argument, otherwise for server - user \"server\" argument.");
         }
     }

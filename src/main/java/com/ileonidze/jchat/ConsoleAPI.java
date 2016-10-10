@@ -1,96 +1,113 @@
 package com.ileonidze.jchat;
 
 import org.apache.log4j.Logger;
+
 import java.util.*;
 
 class ConsoleAPI {
     private static final Logger console = Logger.getLogger(ConsoleAPI.class);
     static String thisSession = null;
 
-    private static final List<ConsoleAPIFactoriesListProto> consoleAPIMethodsList = new ArrayList<>();
+    private static final List<ConsoleAPIProto> consoleAPIMethods = new ArrayList<>();
+
     static {
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto(null,        "exit",     new ConsoleAPIExitFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto(null,        "help",     new ConsoleAPIHelpFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "register", new ConsoleAPIUserRegisterFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "login",    new ConsoleAPIUserLoginFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "logout",   new ConsoleAPIUserLogoutFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "authed",   new ConsoleAPIUserAuthedFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "info",     new ConsoleAPIUserInfoFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "modify",   new ConsoleAPIUserModifyFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "remove",   new ConsoleAPIUserRemoveFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "ban",      new ConsoleAPIUserBanFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "unban",    new ConsoleAPIUserUnbanFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "op",       new ConsoleAPIUserOpFactory()));
-     /* consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "contacts", new ConsoleAPIUserContactsFactory())); */
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "chats",    new ConsoleAPIUserChatsFactory()));
-     /* consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("user",      "edit",     new ConsoleAPIUserEditFactory())); */
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("chat",      "create",   new ConsoleAPIChatCreateFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("chat",      "remove",   new ConsoleAPIChatRemoveFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("chat",      "info",     new ConsoleAPIChatInfoFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("chat",      "rename",   new ConsoleAPIChatRenameFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("chat",      "members",  new ConsoleAPIChatMembersFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("chat",      "invite",   new ConsoleAPIChatInviteFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("chat",      "leave",    new ConsoleAPIChatLeaveFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("chat",      "messages", new ConsoleAPIChatMessagesFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("message",   "send",     new ConsoleAPIMessageSendFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("message",   "info",     new ConsoleAPIMessageInfoFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("message",   "forward",  new ConsoleAPIMessageForwardFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("message",   "delete",   new ConsoleAPIMessageDeleteFactory()));
-        consoleAPIMethodsList.add(new ConsoleAPIFactoriesListProto("message",   "edit",     new ConsoleAPIMessageEditFactory()));
+        consoleAPIMethods.add(new ConsoleAPIProto(null, "exit", new ConsoleAPIExit()));
+        consoleAPIMethods.add(new ConsoleAPIProto(null, "help", new ConsoleAPIHelp()));
+        consoleAPIMethods.add(new ConsoleAPIProto(null, "test", new ConsoleAPITest()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "register", new ConsoleAPIUserRegister()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "login", new ConsoleAPIUserLogin()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "logout", new ConsoleAPIUserLogout()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "authed", new ConsoleAPIUserAuthed()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "info", new ConsoleAPIUserInfo()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "modify", new ConsoleAPIUserModify()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "remove", new ConsoleAPIUserRemove()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "ban", new ConsoleAPIUserBan()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "unban", new ConsoleAPIUserUnban()));
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "op", new ConsoleAPIUserOp()));
+     /* consoleAPIMethods.add(new ConsoleAPIProto("user",      "contacts", new ConsoleAPIUserContacts())); */
+        consoleAPIMethods.add(new ConsoleAPIProto("user", "chats", new ConsoleAPIUserChats()));
+     /* consoleAPIMethods.add(new ConsoleAPIProto("user",      "edit",     new ConsoleAPIUserEdit())); */
+        consoleAPIMethods.add(new ConsoleAPIProto("chat", "create", new ConsoleAPIChatCreate()));
+        consoleAPIMethods.add(new ConsoleAPIProto("chat", "remove", new ConsoleAPIChatRemove()));
+        consoleAPIMethods.add(new ConsoleAPIProto("chat", "info", new ConsoleAPIChatInfo()));
+        consoleAPIMethods.add(new ConsoleAPIProto("chat", "rename", new ConsoleAPIChatRename()));
+        consoleAPIMethods.add(new ConsoleAPIProto("chat", "members", new ConsoleAPIChatMembers()));
+        consoleAPIMethods.add(new ConsoleAPIProto("chat", "invite", new ConsoleAPIChatInvite()));
+        consoleAPIMethods.add(new ConsoleAPIProto("chat", "leave", new ConsoleAPIChatLeave()));
+        consoleAPIMethods.add(new ConsoleAPIProto("chat", "messages", new ConsoleAPIChatMessages()));
+        consoleAPIMethods.add(new ConsoleAPIProto("message", "send", new ConsoleAPIMessageSend()));
+        consoleAPIMethods.add(new ConsoleAPIProto("message", "info", new ConsoleAPIMessageInfo()));
+        consoleAPIMethods.add(new ConsoleAPIProto("message", "forward", new ConsoleAPIMessageForward()));
+        consoleAPIMethods.add(new ConsoleAPIProto("message", "delete", new ConsoleAPIMessageDelete()));
+        consoleAPIMethods.add(new ConsoleAPIProto("message", "edit", new ConsoleAPIMessageEdit()));
     }
 
-    static boolean isCaughtIncorrectSessionState(boolean authRequired){
-        if(thisSession!=null&&!authRequired){
+    static boolean isCaughtIncorrectSessionState(boolean authRequired) {
+        if (thisSession != null && !authRequired) {
             console.error("To proceed this action you have to sign out and try again.");
             return true;
-        }else if(thisSession==null&&authRequired){
+        } else if (thisSession == null && authRequired) {
             console.error("To proceed this action you have to be logged in. Fix this issue and try again.");
             return true;
         }
         return false;
     }
-    static boolean isCaughtIncorrectCommandPartsLength(int requiredLength, String[] array){
-        if(array.length<requiredLength){
+
+    static boolean isCaughtIncorrectCommandPartsLength(int requiredLength, String[] array) {
+        if (array.length < requiredLength) {
             console.error("Some fields are missing. To get more info use help.");
             return true;
         }
         return false;
     }
-    static boolean isCaughtIncorrectAccessLevel(int requiredAccessLevel){
-        VDBUser userObject = MethodsUser.getUserByUsername(thisSession,null);
-        if(userObject==null||userObject.getID()==null){
+
+    static boolean isCaughtIncorrectAccessLevel(int requiredAccessLevel) {
+        VDBUser userObject = MethodsUser.getUserByUsername(thisSession, null);
+        if (userObject == null || userObject.getID() == null) {
             console.error("Your session expired. Try to sign in again.");
             return true;
         }
-        if(userObject.getAccessLevel()<requiredAccessLevel){
+        if (userObject.getAccessLevel() < requiredAccessLevel) {
             console.error("Access denied");
             return true;
         }
         return false;
     }
 
-    void parse(String command){
+    void parse(String command) {
         String[] commandParts = command.split("\\s");
-        for (int i =0; i < commandParts.length; i++){
+        for (int i = 0; i < commandParts.length; i++) {
             commandParts[i] = commandParts[i].replace("\\s", " ").replace("\\n", "\n");
         }
 
         String queryPart1 = null;
         String queryPart2;
-        if(commandParts.length == 1){
+        if (commandParts.length == 1) {
             queryPart2 = commandParts[0].toLowerCase();
-        }else{
+        } else {
             queryPart1 = commandParts[0].toLowerCase();
             queryPart2 = commandParts[1].toLowerCase();
         }
 
-        for(ConsoleAPIFactoriesListProto method: consoleAPIMethodsList){
-            if(((method.section==null&&queryPart1==null&&method.key.equals(queryPart2))||(method.section!=null&&queryPart1!=null&&method.section.equals(queryPart1))&&method.key.equals(queryPart2))){
-                method.value.proceed(commandParts);
+        for (ConsoleAPIProto method : consoleAPIMethods) {
+            if (((method.section == null && queryPart1 == null && method.key.equals(queryPart2)) || (method.section != null && queryPart1 != null && method.section.equals(queryPart1)) && method.key.equals(queryPart2))) {
+                ConsoleResponse response = method.value.proceed(commandParts);
+                switch (response.getCode()) {
+                    case "error":
+                        console.error(response.getMessage());
+                        break;
+                    case "info":
+                        console.info(response.getMessage());
+                        break;
+                    case "warn":
+                        console.warn(response.getMessage());
+                        break;
+                    default:
+                        console.debug(response.getMessage());
+                }
                 return;
             }
         }
-
         console.warn("Please, use help to find correct methods.");
     }
 }

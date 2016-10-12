@@ -7,6 +7,7 @@ import java.util.*;
 class ConsoleAPI {
     private static final Logger console = Logger.getLogger(ConsoleAPI.class);
     static String thisSession = null;
+    static boolean silentMode = false;
 
     private static final List<ConsoleAPIProto> consoleAPIMethods = new ArrayList<>();
 
@@ -44,10 +45,11 @@ class ConsoleAPI {
 
     static boolean isCaughtIncorrectSessionState(boolean authRequired) {
         if (thisSession != null && !authRequired) {
-            console.error("To proceed this action you have to sign out and try again.");
+            if (!silentMode) console.error("To proceed this action you have to sign out and try again.");
             return true;
         } else if (thisSession == null && authRequired) {
-            console.error("To proceed this action you have to be logged in. Fix this issue and try again.");
+            if (!silentMode)
+                console.error("To proceed this action you have to be logged in. Fix this issue and try again.");
             return true;
         }
         return false;
@@ -55,7 +57,7 @@ class ConsoleAPI {
 
     static boolean isCaughtIncorrectCommandPartsLength(int requiredLength, String[] array) {
         if (array.length < requiredLength) {
-            console.error("Some fields are missing. To get more info use help.");
+            if (!silentMode) console.error("Some fields are missing. To get more info use help.");
             return true;
         }
         return false;
@@ -64,11 +66,11 @@ class ConsoleAPI {
     static boolean isCaughtIncorrectAccessLevel(int requiredAccessLevel) {
         VDBUser userObject = MethodsUser.getUserByUsername(thisSession, null);
         if (userObject == null || userObject.getID() == null) {
-            console.error("Your session expired. Try to sign in again.");
+            if (!silentMode) console.error("Your session expired. Try to sign in again.");
             return true;
         }
         if (userObject.getAccessLevel() < requiredAccessLevel) {
-            console.error("Access denied");
+            if (!silentMode) console.error("Access denied");
             return true;
         }
         return false;
@@ -94,20 +96,20 @@ class ConsoleAPI {
                 ConsoleResponse response = method.value.proceed(commandParts);
                 switch (response.getCode()) {
                     case "error":
-                        console.error(response.getMessage());
+                        if (!silentMode) console.error(response.getMessage());
                         break;
                     case "info":
-                        console.info(response.getMessage());
+                        if (!silentMode) console.info(response.getMessage());
                         break;
                     case "warn":
-                        console.warn(response.getMessage());
+                        if (!silentMode) console.warn(response.getMessage());
                         break;
                     default:
-                        console.debug(response.getMessage());
+                        if (!silentMode) console.debug(response.getMessage());
                 }
                 return;
             }
         }
-        console.warn("Please, use help to find correct methods.");
+        if (!silentMode) console.warn("Please, use help to find correct methods.");
     }
 }

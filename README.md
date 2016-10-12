@@ -32,6 +32,7 @@ SQL                      | :x:                |
 --------------- | ------------------ | ------------- | ---
 help            | :white_check_mark: |   | Выводит список доступных команд вроде этого
 exit            | :white_check_mark: |   | Завершает приложение
+test            | :white_check_mark: |   | Самотестирует приложение
 user            |
 user register   | :white_check_mark: |   | Регистрирует анонима
 user login      | :white_check_mark: |   | Авторизует анонима

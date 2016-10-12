@@ -2,6 +2,7 @@ package com.ileonidze.jchat;
 
 import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 class ConsoleAPITest extends ConsoleAPIEvalProto {
@@ -19,6 +20,9 @@ class ConsoleAPITest extends ConsoleAPIEvalProto {
         console.info("Running selftest...");
         int testsPassed = 0, totalTests = 0;
 
+        VDB.users = new ArrayList<>();
+        VDB.chats = new ArrayList<>();
+        VDB.sessions = new ArrayList<>();
 
         /* AUTHED 1 */
         totalTests++;
@@ -108,6 +112,11 @@ class ConsoleAPITest extends ConsoleAPIEvalProto {
 
         console.info("");
         console.info("Test result: " + (Math.floor(testsPassed / totalTests * 1000) / 10) + "% (" + testsPassed + " PASSED," + (totalTests - testsPassed) + " FAILED)");
+
+        VDB.users = new ArrayList<>();
+        VDB.chats = new ArrayList<>();
+        VDB.sessions = new ArrayList<>();
+
         return new ConsoleResponse("info", "Test ended");
     }
 }

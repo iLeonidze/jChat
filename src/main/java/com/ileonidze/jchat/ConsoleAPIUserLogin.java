@@ -3,7 +3,7 @@ package com.ileonidze.jchat;
 class ConsoleAPIUserLogin extends ConsoleAPIEvalProto {
     public ConsoleResponse proceed(String[] commandParts) {
         if (ConsoleAPI.isCaughtIncorrectSessionState(false) || ConsoleAPI.isCaughtIncorrectCommandPartsLength(4, commandParts))
-            return new ConsoleResponse("error", "Incorrect input data");
+            return new ConsoleResponse("error", "Internal error");
         String l_login = commandParts[2];
         String l_password = commandParts[3];
         String obtainedSessionKey = MethodsUser.login(l_login, l_password);

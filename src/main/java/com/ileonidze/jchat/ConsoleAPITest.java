@@ -141,12 +141,12 @@ class ConsoleAPITest extends ConsoleAPIEvalProto {
         boolean test9 = false;
         String[] testCredentials9 = {null, null, userName1};
         ConsoleResponse testResult9 = new ConsoleAPIUserInfo().proceed(testCredentials9);
-        String userID1 = testResult9.getCode().equals("info") ? testResult9.getMessage().split("ID: ")[1].split(" ")[0] : null;
+        String userID1 = testResult9.getCode().equals("info") ? testResult9.getMessage().split("ID: ")[1].split("\n")[0] : null;
         if (testResult9.getCode().equals("info") && userID1 != null) {
             testsPassed++;
             test9 = true;
         }
-        console.info("user.info[1]: " + (test9 ? "PASSED" : "FAILED") + ", state: " + testResult9.getCode());
+        console.info("user.info[1]: " + (test9 ? "PASSED" : "FAILED") + ", state: " + testResult9.getCode() + ", message: " + testResult9.getMessage());
 
 
         /* LOGOUT [1] */
@@ -213,12 +213,12 @@ class ConsoleAPITest extends ConsoleAPIEvalProto {
         boolean test14 = false;
         String[] testCredentials14 = {null, null, userName2};
         ConsoleResponse testResult14 = new ConsoleAPIUserInfo().proceed(testCredentials14);
-        String userID2 = testResult14.getCode().equals("info") ? testResult14.getMessage().split("ID: ")[1].split(" ")[0] : null;
+        String userID2 = testResult14.getCode().equals("info") ? testResult14.getMessage().split("ID: ")[1].split("\n")[0] : null;
         if (testResult14.getCode().equals("info") && userID2 != null) {
             testsPassed++;
             test14 = true;
         }
-        console.info("user.info[2]: " + (test14 ? "PASSED" : "FAILED") + ", state: " + testResult14.getCode());
+        console.info("user.info[2]: " + (test14 ? "PASSED" : "FAILED") + ", state: " + testResult14.getCode() + ", message: " + testResult14.getMessage());
 
 
         /* INFO [3] */
@@ -236,7 +236,7 @@ class ConsoleAPITest extends ConsoleAPIEvalProto {
         /* CHAT CREATE [1] */
         totalTests++;
         boolean test16 = false;
-        String[] testCredentials16 = {null, null, userName1, userName1, generateString(new Random(), alphabet, 5) + " " + generateString(new Random(), alphabet, 8)};
+        String[] testCredentials16 = {null, null, userID1};
         ConsoleResponse testResult16 = new ConsoleAPIChatCreate().proceed(testCredentials16);
         String chatID1 = testResult16.getCode().equals("info") ? testResult16.getMessage().split("#")[1].split(" ")[0] : null;
         if (testResult16.getCode().equals("info") && chatID1 != null) {
@@ -244,6 +244,67 @@ class ConsoleAPITest extends ConsoleAPIEvalProto {
             test16 = true;
         }
         console.info("chat.create[1]: " + (test16 ? "PASSED" : "FAILED") + ", state: " + testResult16.getCode() + ", message: " + testResult16.getMessage());
+
+
+        /* CHAT CREATE [2] */
+        totalTests++;
+        boolean test17 = false;
+        String[] testCredentials17 = {null, null, userID2};
+        ConsoleResponse testResult17 = new ConsoleAPIChatCreate().proceed(testCredentials17);
+        String chatID2 = testResult17.getCode().equals("info") ? testResult17.getMessage().split("#")[1].split(" ")[0] : null;
+        if (testResult17.getCode().equals("info") && chatID2 != null) {
+            testsPassed++;
+            test17 = true;
+        }
+        console.info("chat.create[2]: " + (test17 ? "PASSED" : "FAILED") + ", state: " + testResult17.getCode() + ", message: " + testResult17.getMessage());
+
+
+        /* CHAT INFO [1] */
+        totalTests++;
+        boolean test18 = false;
+        String[] testCredentials18 = {null, null, chatID1, generateString(new Random(), alphabet, 8)};
+        ConsoleResponse testResult18 = new ConsoleAPIChatInfo().proceed(testCredentials18);
+        if (testResult18.getCode().equals("info")) {
+            testsPassed++;
+            test18 = true;
+        }
+        console.info("chat.info[1]: " + (test18 ? "PASSED" : "FAILED") + ", state: " + testResult18.getCode() + ", message: " + testResult18.getMessage());
+
+
+        /* CHAT INFO [2] */
+        totalTests++;
+        boolean test19 = false;
+        String[] testCredentials19 = {null, null, chatID2, generateString(new Random(), alphabet, 8)};
+        ConsoleResponse testResult19 = new ConsoleAPIChatInfo().proceed(testCredentials19);
+        if (testResult19.getCode().equals("info")) {
+            testsPassed++;
+            test19 = true;
+        }
+        console.info("chat.info[2]: " + (test19 ? "PASSED" : "FAILED") + ", state: " + testResult19.getCode() + ", message: " + testResult19.getMessage());
+
+
+        /* CHAT REMOVE [1] */
+        totalTests++;
+        boolean test20 = false;
+        String[] testCredentials20 = {null, null, chatID2};
+        ConsoleResponse testResult20 = new ConsoleAPIChatRemove().proceed(testCredentials20);
+        if (testResult20.getCode().equals("info") && testResult20.getMessage().equals("Successfully removed chat #" + chatID2)) {
+            testsPassed++;
+            test20 = true;
+        }
+        console.info("chat.remove[1]: " + (test20 ? "PASSED" : "FAILED") + ", state: " + testResult20.getCode() + ", message: " + testResult20.getMessage());
+
+
+        /* CHAT INFO [3] */
+        totalTests++;
+        boolean test21 = false;
+        String[] testCredentials21 = {null, null, chatID2};
+        ConsoleResponse testResult21 = new ConsoleAPIChatInfo().proceed(testCredentials21);
+        if (testResult21.getCode().equals("warn") && testResult21.getMessage().equals("Chat #" + chatID2 + " not found")) {
+            testsPassed++;
+            test21 = true;
+        }
+        console.info("chat.info[3]: " + (test21 ? "PASSED" : "FAILED") + ", state: " + testResult21.getCode() + ", message: " + testResult21.getMessage());
 
 
 

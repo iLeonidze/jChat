@@ -149,6 +149,103 @@ class ConsoleAPITest extends ConsoleAPIEvalProto {
         console.info("user.info[1]: " + (test9 ? "PASSED" : "FAILED") + ", state: " + testResult9.getCode());
 
 
+        /* LOGOUT [1] */
+        totalTests++;
+        boolean test10 = false;
+        String[] testCredentials10 = {null};
+        ConsoleResponse testResult10 = new ConsoleAPIUserLogout().proceed(testCredentials10);
+        if (testResult10.getCode().equals("info") && testResult10.getMessage().equals("You have been successfully deauthed!")) {
+            testsPassed++;
+            test10 = true;
+        }
+        console.info("user.logout[1]: " + (test10 ? "PASSED" : "FAILED") + ", state: " + testResult10.getCode() + ", message: " + testResult10.getMessage());
+
+
+        /* AUTHED [3] */
+        totalTests++;
+        boolean test11 = false;
+        ConsoleResponse testResult11 = new ConsoleAPIUserAuthed().proceed(null);
+        if (testResult11.getCode().equals("info") && testResult11.getMessage().equals("No")) {
+            testsPassed++;
+            test11 = true;
+        }
+        console.info("user.authed[3]: " + (test11 ? "PASSED" : "FAILED") + ", state: " + testResult11.getCode() + ", message: " + testResult11.getMessage());
+
+
+        /* REGISTER [5] */
+        totalTests++;
+        boolean test12 = false;
+        String userName2 = generateString(new Random(), alphabet, 8);
+        String userPassword2 = generateString(new Random(), alphabet, 9);
+        String[] testCredentials12 = {null, //0
+                null, //1
+                userName2, //2 login
+                userPassword2, //3 password
+                generateString(new Random(), alphabet, 5) + " " + generateString(new Random(), alphabet, 5), //4 name
+                generateString(new Random(), alphabet, 5) + "@" + generateString(new Random(), alphabet, 4) + ".ru", // 5 email
+                "male"}; // 6 gender
+        ConsoleResponse testResult12 = new ConsoleAPIUserRegister().proceed(testCredentials12);
+        if (testResult12.getCode().equals("info") && testResult12.getMessage().equals("User @" + userName2 + " have been successfully registered!")) {
+            testsPassed++;
+            test12 = true;
+        }
+        console.info("user.register[2]: " + (test12 ? "PASSED" : "FAILED") + ", state: " + testResult12.getCode() + ", message: " + testResult12.getMessage());
+
+
+        /* LOGIN [3] */
+        totalTests++;
+        boolean test13 = false;
+        String[] testCredentials13 = {null, //0
+                null, //1
+                userName2, //2 login
+                userPassword2, //3 password
+        };
+        ConsoleResponse testResult13 = new ConsoleAPIUserLogin().proceed(testCredentials13);
+        if (testResult13.getCode().equals("info") && testResult13.getMessage().equals("Welcome, @" + userName2 + ". You have been logged in!")) {
+            testsPassed++;
+            test13 = true;
+        }
+        console.info("user.login[3]: " + (test13 ? "PASSED" : "FAILED") + ", state: " + testResult13.getCode() + ", message: " + testResult13.getMessage());
+
+
+        /* INFO [2] */
+        totalTests++;
+        boolean test14 = false;
+        String[] testCredentials14 = {null, null, userName2};
+        ConsoleResponse testResult14 = new ConsoleAPIUserInfo().proceed(testCredentials14);
+        String userID2 = testResult14.getCode().equals("info") ? testResult14.getMessage().split("ID: ")[1].split(" ")[0] : null;
+        if (testResult14.getCode().equals("info") && userID2 != null) {
+            testsPassed++;
+            test14 = true;
+        }
+        console.info("user.info[2]: " + (test14 ? "PASSED" : "FAILED") + ", state: " + testResult14.getCode());
+
+
+        /* INFO [3] */
+        totalTests++;
+        boolean test15 = false;
+        String[] testCredentials15 = {null, null, userName1};
+        ConsoleResponse testResult15 = new ConsoleAPIUserInfo().proceed(testCredentials15);
+        if (testResult15.getCode().equals("info") && testResult15.getMessage().split("Email: ").length == 1) {
+            testsPassed++;
+            test15 = true;
+        }
+        console.info("user.info[3]: " + (test15 ? "PASSED" : "FAILED") + ", state: " + testResult15.getCode());
+
+
+        /* CHAT CREATE [1] */
+        totalTests++;
+        boolean test16 = false;
+        String[] testCredentials16 = {null, null, userName1, userName1, generateString(new Random(), alphabet, 5) + " " + generateString(new Random(), alphabet, 8)};
+        ConsoleResponse testResult16 = new ConsoleAPIChatCreate().proceed(testCredentials16);
+        String chatID1 = testResult16.getCode().equals("info") ? testResult16.getMessage().split("#")[1].split(" ")[0] : null;
+        if (testResult16.getCode().equals("info") && chatID1 != null) {
+            testsPassed++;
+            test16 = true;
+        }
+        console.info("chat.create[1]: " + (test16 ? "PASSED" : "FAILED") + ", state: " + testResult16.getCode() + ", message: " + testResult16.getMessage());
+
+
 
 
         console.info("");

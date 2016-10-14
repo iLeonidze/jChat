@@ -6,7 +6,7 @@ class MethodsMessage {
             return "Session is invalid. Try to relogin.";
         VDBChat chatToSend = MethodsChat.getChat(thisSession, chatID);
         VDBUser userToSendFrom = MethodsUser.getSessionUser(thisSession);
-        if (chatToSend == null) return "Chat is not exists";
+        if (chatToSend == null || chatToSend.getID() == null) return "Chat is not exists";
         if (userToSendFrom == null || userToSendFrom.getID() == null) return "Session is invalid. Try to relogin.";
         if (!chatToSend.getMembersIDs().contains(userToSendFrom.getID()) && !chatToSend.getOwnerID().equals(userToSendFrom.getID()) && userToSendFrom.getAccessLevel() < 1)
             return "Access denied";

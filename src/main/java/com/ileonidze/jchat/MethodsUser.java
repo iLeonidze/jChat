@@ -1,5 +1,8 @@
 package com.ileonidze.jchat;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Arrays;
 import java.util.Date;
 
 class MethodsUser {
@@ -9,13 +12,45 @@ class MethodsUser {
     static String register(String userName, String password, String name, String email, String gender) {
         String testsResult = tests.RegistrationCredentials(userName, password, name, email, gender);
         if (testsResult != null) return testsResult;
-        for (VDBUser user : VDB.users) {
-            if (user.getLogin().toLowerCase().equals(userName.toLowerCase()) || user.getEmail().toLowerCase().equals(email.toLowerCase())) {
-                return "User already exists";
+
+        if (Arrays.asList(Main.executionArguments).contains("sql")) {
+            try {
+                PreparedStatement preparedStatementCheck = Main.connection.prepareStatement("SELECT * FROM \"users\" WHERE 'login' = ?");
+                preparedStatementCheck.setString(1, userName.toLowerCase());
+                ResultSet rs = preparedStatementCheck.executeQuery();
+                if (rs.next()) {
+                    return "User already exists";
+                } else {
+                    rs.close();
+                    PreparedStatement preparedStatementUpdate = Main.connection.prepareStatement("INSERT INTO \"users\" VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    preparedStatementUpdate.setString(1, md5.proceed(new Date().getTime() + "" + email + userName)); // id
+                    preparedStatementUpdate.setString(2, userName);                              // login
+                    preparedStatementUpdate.setString(3, md5.proceed(password));                 // password
+                    preparedStatementUpdate.setString(4, name);                                  // name
+                    preparedStatementUpdate.setString(5, email.toLowerCase());                   // email
+                    preparedStatementUpdate.setInt(6, gender.equals("female") ? 2 : 1);       // gender
+                    preparedStatementUpdate.setInt(7, Math.round(new Date().getTime() / 1000)); // registeredTime
+                    preparedStatementUpdate.setInt(8, Math.round(new Date().getTime() / 1000)); // loggedInTime
+                    preparedStatementUpdate.setInt(9, Math.round(new Date().getTime() / 1000)); // lastOnlineTime
+                    preparedStatementUpdate.setString(10, "");                                    // chatsIDs
+                    preparedStatementUpdate.setInt(11, 0);                                     // accessLevel
+                    preparedStatementUpdate.setBoolean(12, false);                                 // bannedState
+                    ResultSet rs2 = preparedStatementUpdate.executeQuery();
+                    return null;
+                }
+            } catch (Exception e) {
+                return "Database error";
             }
         }
+        if (Arrays.asList(Main.executionArguments).contains("vdb")) {
+            for (VDBUser user : VDB.users) {
+                if (user.getLogin().toLowerCase().equals(userName.toLowerCase()) || user.getEmail().toLowerCase().equals(email.toLowerCase())) {
+                    return "User already exists";
+                }
+            }
 
-        VDB.users.add(new VDBUser().init(userName, password, name, email.toLowerCase(), gender));
+            VDB.users.add(new VDBUser().init(userName, password, name, email.toLowerCase(), gender));
+        }
 
         return null;
     }

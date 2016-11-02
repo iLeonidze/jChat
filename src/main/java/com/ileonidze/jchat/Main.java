@@ -139,6 +139,16 @@ public class Main {
             if (isSQLDBStarted()) {
                 console.info("SQL thread connected");
 
+                try {
+                    Statement statement = connection.createStatement();
+                    statement.executeUpdate("SET FILES WRITE DELAY 1");
+                    statement.close();
+                    console.info("Files writing delay modified to 1s");
+                } catch (SQLException se) {
+                    console.error("Can\'t set files writing delay");
+                    se.printStackTrace();
+                }
+
                 boolean chatsTableExists = false;
                 boolean messagesTableExists = false;
                 boolean sessionsTableExists = false;

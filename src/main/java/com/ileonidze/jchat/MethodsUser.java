@@ -2,6 +2,7 @@ package com.ileonidze.jchat;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -15,7 +16,7 @@ class MethodsUser {
 
         if (Arrays.asList(Main.executionArguments).contains("sql")) {
             try {
-                PreparedStatement preparedStatementCheck = Main.connection.prepareStatement("SELECT * FROM \"users\" WHERE 'login' = ?");
+                PreparedStatement preparedStatementCheck = Main.connection.prepareStatement("SELECT * FROM \"users\" WHERE \"login\" = ?");
                 preparedStatementCheck.setString(1, userName.toLowerCase());
                 ResultSet rs = preparedStatementCheck.executeQuery();
                 if (rs.next()) {
@@ -24,7 +25,7 @@ class MethodsUser {
                     rs.close();
                     PreparedStatement preparedStatementUpdate = Main.connection.prepareStatement("INSERT INTO \"users\" VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                     preparedStatementUpdate.setString(1, md5.proceed(new Date().getTime() + "" + email + userName)); // id
-                    preparedStatementUpdate.setString(2, userName);                              // login
+                    preparedStatementUpdate.setString(2, userName.toLowerCase());                              // login
                     preparedStatementUpdate.setString(3, md5.proceed(password));                 // password
                     preparedStatementUpdate.setString(4, name);                                  // name
                     preparedStatementUpdate.setString(5, email.toLowerCase());                   // email
@@ -35,10 +36,11 @@ class MethodsUser {
                     preparedStatementUpdate.setString(10, "");                                    // chatsIDs
                     preparedStatementUpdate.setInt(11, 0);                                     // accessLevel
                     preparedStatementUpdate.setBoolean(12, false);                                 // bannedState
-                    ResultSet rs2 = preparedStatementUpdate.executeQuery();
-                    return null;
+                    preparedStatementUpdate.executeUpdate();
+                    Main.connection.commit();
                 }
-            } catch (Exception e) {
+            } catch (SQLException se) {
+                se.printStackTrace();
                 return "Database error";
             }
         }

@@ -1,3 +1,5 @@
+[Project is not maintained]
+
 # jChat
 Многофункциональный мессенджер
 
